@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #1A8C76;
+    --primary-dark: #177a68;
+    --secondary: #0A58CA;
+    --text-main: #212529;
+    --text-light: #6C757D;
+    --bg-light: #f8f9fa;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-main);
+    background-color: #ffffff;
+}
+
+/* Кнопки як в додатку */
+.btn-primary {
+    @apply bg-[var(--primary)] text-white font-semibold rounded-2xl px-8 py-4 transition-all duration-300 hover:bg-[var(--primary-dark)] hover:shadow-lg transform hover:-translate-y-0.5 inline-block;
+}
+
+.btn-outline {
+    @apply border-2 border-[var(--primary)] text-[var(--primary)] font-semibold rounded-2xl px-8 py-4 transition-all duration-300 hover:bg-[var(--primary)] hover:text-white inline-block;
+}
+
+.section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4 text-[var(--text-main)];
+}
+
+.section-subtitle {
+    @apply text-[var(--text-light)] text-center max-w-2xl mx-auto mb-12;
+}
+
+/* Стилі для кнопок сторів */
+.store-button {
+    @apply bg-black text-white rounded-xl px-4 py-2 flex items-center gap-3 hover:opacity-80 transition duration-300;
+}

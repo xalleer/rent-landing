@@ -2,9 +2,9 @@
   <AdminShell title="Панель Адміністратора">
     <div class="container mx-auto px-6 max-w-5xl">
       <div class="grid md:grid-cols-3 gap-6 mb-8">
-        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
               <ion-icon name="document-text-outline" class="text-2xl"></ion-icon>
             </div>
             <div>
@@ -14,7 +14,7 @@
           </div>
         </div>
 
-        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
               <ion-icon name="people-outline" class="text-2xl"></ion-icon>
@@ -26,9 +26,9 @@
           </div>
         </div>
 
-        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center">
+            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center">
               <ion-icon name="shield-checkmark-outline" class="text-2xl"></ion-icon>
             </div>
             <div>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
+      <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
         <h3 class="text-xl font-bold mb-4 text-dark flex items-center gap-2">
           <ion-icon name="stats-chart-outline" class="text-primary"></ion-icon>
           Статистика за останній тиждень
@@ -52,13 +52,13 @@
         </div>
       </div>
 
-      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+      <div class="bg-white rounded-xl shadow-lg p-6">
         <h3 class="text-xl font-bold mb-4 text-dark flex items-center gap-2">
           <ion-icon name="list-outline" class="text-primary"></ion-icon>
           Останні дії
         </h3>
         <div class="space-y-3">
-          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm">
                 <ion-icon name="checkmark"></ion-icon>
@@ -71,7 +71,7 @@
             <div class="text-sm text-gray-400">5 хв тому</div>
           </div>
 
-          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm">
                 <ion-icon name="person-add"></ion-icon>
@@ -84,7 +84,7 @@
             <div class="text-sm text-gray-400">15 хв тому</div>
           </div>
 
-          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-sm">
                 <ion-icon name="flag"></ion-icon>
@@ -103,6 +103,7 @@
 </template>
 
 <script setup lang="ts">
+import AdminShell from '~/components/AdminShell.vue';
 // У реальному проекті тут потрібно додати перевірку авторизації (Nuxt Middleware)
 // для захисту сторінки. Якщо користувач не авторизований, його потрібно
 // перенаправляти на /admin.

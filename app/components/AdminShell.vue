@@ -3,7 +3,7 @@
     <AdminSidebar />
     <div class="flex-1 flex flex-col pl-64">
       <AdminHeader :title="title" />
-      <main class="flex-grow pt-20 pb-10 px-6">
+      <main class="flex-grow pt-24 pb-10 px-6">
         <slot />
       </main>
     </div>

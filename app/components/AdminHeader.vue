@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white/95 backdrop-blur-sm shadow-md h-16 flex items-center px-6 fixed top-0 right-0 z-30" style="left: 16rem;">
+  <header class="bg-white/95 backdrop-blur-sm shadow-md h-16 flex items-center px-6 fixed top-0 right-0 left-64 z-30">
     <div class="flex-grow">
       <h1 class="text-xl font-semibold text-dark">{{ title }}</h1>
     </div>

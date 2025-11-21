@@ -1,9 +1,15 @@
 <template>
-  <div class="min-h-screen flex bg-gray-50">
+  <div class="min-h-screen bg-gray-50">
+    <!-- Sidebar -->
     <AdminSidebar />
-    <div class="flex-1 flex flex-col pl-64">
+
+    <!-- Main Content Area with left margin for sidebar -->
+    <div class="ml-64">
+      <!-- Header -->
       <AdminHeader :title="title" />
-      <main class="flex-grow pt-24 pb-10 px-6">
+
+      <!-- Main Content with top padding for header -->
+      <main class="pt-24 px-8 pb-8">
         <slot />
       </main>
     </div>

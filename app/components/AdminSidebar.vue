@@ -69,6 +69,17 @@
 
         <li>
           <NuxtLink
+              to="/admin/income"
+              class="flex items-center p-3 text-white rounded-xl hover:bg-white/10 transition duration-200 group"
+              active-class="bg-primary hover:bg-primary"
+          >
+            <ion-icon name="wallet-outline" class="text-xl mr-3"></ion-icon>
+            <span class="font-medium">Доходи</span>
+          </NuxtLink>
+        </li>
+
+        <li>
+          <NuxtLink
               to="/admin/reports"
               class="flex items-center p-3 text-white rounded-xl hover:bg-white/10 transition duration-200 group"
               active-class="bg-primary hover:bg-primary"

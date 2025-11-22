@@ -1,5 +1,4 @@
 <template>
-  <AdminShell title="Оголошення">
     <div class="max-w-7xl mx-auto">
       <!-- Filters and Search -->
       <div class="bg-white rounded-2xl shadow-sm p-6 mb-6 border border-gray-100">
@@ -99,11 +98,9 @@
         </div>
       </div>
     </div>
-  </AdminShell>
 </template>
 
 <script setup lang="ts">
-import AdminShell from '~/components/AdminShell.vue';
 import { ref } from 'vue';
 
 const ads = ref([

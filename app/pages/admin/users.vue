@@ -1,5 +1,4 @@
 <template>
-  <AdminShell title="Користувачі">
     <div class="max-w-7xl mx-auto">
       <!-- Stats -->
       <div class="grid md:grid-cols-3 gap-6 mb-6">
@@ -144,11 +143,9 @@
         </div>
       </div>
     </div>
-  </AdminShell>
 </template>
 
 <script setup lang="ts">
-import AdminShell from '~/components/AdminShell.vue';
 import { ref } from 'vue';
 
 const users = ref([

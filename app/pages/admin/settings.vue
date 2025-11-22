@@ -1,5 +1,4 @@
 <template>
-  <AdminShell title="Налаштування">
     <div class="max-w-4xl mx-auto">
       <!-- Profile Settings -->
       <div class="bg-white rounded-2xl shadow-sm p-8 mb-6 border border-gray-100">
@@ -144,9 +143,7 @@
         </div>
       </div>
     </div>
-  </AdminShell>
 </template>
 
 <script setup lang="ts">
-import AdminShell from '~/components/AdminShell.vue';
 </script>

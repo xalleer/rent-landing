@@ -29,6 +29,7 @@ const pageTitle = computed(() => {
     '/admin/users': 'Користувачі',
     '/admin/analytics': 'Статистика',
     '/admin/reports': 'Скарги',
+    '/admin/income': 'Доходи',
     '/admin/settings': 'Налаштування'
   };
   return titles[route.path] || 'Адмін Панель';

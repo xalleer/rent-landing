@@ -27,7 +27,7 @@
                   type="password"
                   required
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150"
-                  placeholder="password123"
+                  placeholder="Введіть ADMIN_SECRET_KEY"
               />
             </div>
 
@@ -58,30 +58,44 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-const username = ref('');
-const password = ref('');
-const error = ref('');
-const loading = ref(false);
+// Використовуємо composables Nuxt
+const adminKeyCookie = useCookie('admin_key', { maxAge: 60 * 60 * 24 }); // Кукі на 1 добу
 const router = useRouter();
 
-const HARDCODED_USERNAME = 'admin';
-const HARDCODED_PASSWORD = 'password123';
+const username = ref('');
+const password = ref(''); // Це буде наш ADMIN_SECRET_KEY
+const error = ref('');
+const loading = ref(false);
 
 const login = async () => {
   error.value = '';
   loading.value = true;
 
-  await new Promise(resolve => setTimeout(resolve, 800));
-
-  if (username.value === HARDCODED_USERNAME && password.value === HARDCODED_PASSWORD) {
-    error.value = '';
-    router.push('/admin/dashboard');
+  if (username.value !== 'admin') {
+    error.value = 'Невірне ім\'я користувача';
     loading.value = false;
     return;
-  } else {
-    error.value = 'Невірне ім\'я користувача або пароль.';
   }
 
-  loading.value = false;
+  try {
+    adminKeyCookie.value = password.value;
+
+    const { error: fetchError } = await useAdminFetch('/admin/dashboard', {
+      headers: {
+        'x-admin-key': password.value
+      }
+    });
+
+    if (fetchError.value) {
+      throw new Error('Невірний ключ доступу');
+    }
+
+    router.push('/admin/dashboard');
+  } catch (e) {
+    adminKeyCookie.value = null;
+    error.value = 'Невірний пароль (ключ адміністратора)';
+  } finally {
+    loading.value = false;
+  }
 };
 </script>

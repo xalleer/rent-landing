@@ -1,6 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000'
+    }
+  },
+  build: {
+    transpile: ['chart.js', 'vue-chartjs']
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag.startsWith('ion-')
+    }
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts'

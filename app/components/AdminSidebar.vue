@@ -1,6 +1,9 @@
 <template>
-  <aside class="w-64 bg-dark fixed left-0 top-0 h-screen z-30 flex flex-col shadow-xl overflow-y-auto">
-    <div class="p-6 border-b border-white/10">
+  <aside
+      class="w-64 bg-dark fixed left-0 top-0 h-screen z-40 flex flex-col shadow-xl overflow-y-auto transition-transform duration-300 ease-in-out"
+      :class="[isOpen ? 'translate-x-0' : '-translate-x-full', 'md:translate-x-0']"
+  >
+    <div class="p-6 border-b border-white/10 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="bg-primary p-2 rounded-lg">
           <ion-icon name="home" class="text-white text-2xl"></ion-icon>
@@ -12,6 +15,10 @@
           <div class="text-xs text-gray-400">Admin Panel</div>
         </div>
       </div>
+
+      <button @click="$emit('close')" class="md:hidden text-gray-400 hover:text-white transition p-1">
+        <ion-icon name="close-outline" class="text-2xl"></ion-icon>
+      </button>
     </div>
 
     <nav class="flex-grow overflow-y-auto p-4">
@@ -112,6 +119,14 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
+// Приймаємо проп для стану відкриття
+defineProps<{
+  isOpen?: boolean
+}>();
+
+// Емітимо подію закриття
+defineEmits(['close']);
+
 const stats = ref({
   listings: 0,
   reports: 0,
@@ -120,8 +135,7 @@ const stats = ref({
 
 const fetchStats = async () => {
   try {
-    const { data, error } = await useAdminFetch('/admin/sidebar-stats');
-
+    const { data } = await useAdminFetch('/admin/sidebar-stats');
     if (data.value) {
       stats.value = data.value;
     }
@@ -132,6 +146,5 @@ const fetchStats = async () => {
 
 onMounted(() => {
   fetchStats();
-
 });
 </script>

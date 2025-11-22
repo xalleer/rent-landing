@@ -42,11 +42,7 @@
               <span v-else>Увійти</span>
             </button>
           </form>
-          <div class="mt-6 p-3 bg-blue-50 border border-blue-200 text-sm rounded-lg text-blue-700">
-            <p><strong>Тестові дані:</strong></p>
-            <p>Логін: <code class="font-mono text-xs">admin</code></p>
-            <p>Пароль: <code class="font-mono text-xs">password123</code></p>
-          </div>
+
         </div>
       </div>
     </main>

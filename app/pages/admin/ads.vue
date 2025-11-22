@@ -103,6 +103,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+definePageMeta({
+  layout: 'admin'
+});
+
 const ads = ref([
   { id: 45892, title: '2-кімнатна квартира', location: 'Київ, Печерськ', owner: 'Олена М.', price: 12000, status: 'Активне' },
   { id: 45891, title: '1-кімнатна квартира', location: 'Київ, Позняки', owner: 'Дмитро К.', price: 8500, status: 'Активне' },

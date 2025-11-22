@@ -161,4 +161,8 @@ const getRoleClass = (role: string) => {
       ? 'bg-purple-100 text-purple-700'
       : 'bg-blue-100 text-blue-700';
 };
+
+definePageMeta({
+  layout: 'admin'
+});
 </script>

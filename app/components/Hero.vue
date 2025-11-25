@@ -53,13 +53,13 @@
       <div class="relative flex justify-center perspective-1000">
         <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent blur-3xl rounded-full transform translate-y-10 w-3/4 mx-auto"></div>
         <div class="relative bg-gray-900 rounded-[3rem] border-[8px] border-gray-900 h-[650px] w-[320px] shadow-2xl shadow-primary/20 overflow-hidden z-10 transform rotate-y-12 rotate-z-2 hover:rotate-0 transition duration-700 ease-out">
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-gray-900 rounded-b-2xl z-20"></div>
+          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 status-bar bg-gray-900 rounded-b-2xl z-20"></div>
           <div class="w-full h-full bg-white flex items-center justify-center bg-gray-100">
-            <img src="" alt="Rentora App" class="w-full h-full object-cover" onerror="this.style.display='none'"/>
-            <div class="text-gray-400 text-center px-4 text-sm" onclick="alert('Add image to public/app-screenshot.png')">
-              <ion-icon name="image" class="text-4xl mb-2"></ion-icon><br>
-              Скріншот додатку
-            </div>
+            <img src="/mobile.png" alt="Rentora App" class="w-full h-full object-cover image" onerror="this.style.display='none'"/>
+<!--            <div class="text-gray-400 text-center px-4 text-sm" onclick="alert('Add image to public/app-screenshot.png')">-->
+<!--              <ion-icon name="image" class="text-4xl mb-2"></ion-icon><br>-->
+<!--              Скріншот додатку-->
+<!--            </div>-->
           </div>
         </div>
       </div>
@@ -69,4 +69,11 @@
 
 <style scoped>
 .perspective-1000 { perspective: 1000px; }
+.status-bar{
+  width: 38%;
+  height: 22px;
+}
+.image{
+  margin-top: 10px;
+}
 </style>

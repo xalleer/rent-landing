@@ -12,6 +12,7 @@ on:
           - development
           - production
 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

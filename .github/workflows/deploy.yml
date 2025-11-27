@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: ${{ inputs.environment }}
-      url: ${{ inputs.environment == 'production' && 'https://rentora.site' || 'https://dev.rentora.site' }}
+      url: ${{ inputs.environment == 'production' && 'https://rentora.site' || 'https://dev-land.rentora.site' }}
 
     steps:
       - name: Deploying to ${{ inputs.environment }}

@@ -1,23 +1,38 @@
-name: Deploy Landing
+name: Manual Deploy 🚀
 
 on:
-  push:
-    branches: [ master ]
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Куди деплоїмо?'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - production
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ inputs.environment == 'production' && 'https://rentora.site' || 'https://dev.rentora.site' }}
+
     steps:
-      - name: Deploy to server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: root
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/rentora/landing
-            git pull origin master
-            cd /var/www/rentora
-            docker-compose up -d --build --no-deps landing
-            docker-compose logs --tail=50 landing
+      - name: Deploying to ${{ inputs.environment }}
+        run: echo "Starting deployment..."
+
+      - name: Trigger Dev Webhooks
+        if: ${{ inputs.environment == 'development' }}
+        run: |
+          curl -X POST ${{ secrets.WEBHOOK_BACKEND_DEV }}
+          curl -X POST ${{ secrets.WEBHOOK_FRONTEND_DEV }}
+          echo "✅ Signal sent to Dockploy (DEV)"
+
+      - name: Trigger Prod Webhooks
+        if: ${{ inputs.environment == 'production' }}
+        run: |
+          curl -X POST ${{ secrets.WEBHOOK_BACKEND_PROD }}
+          curl -X POST ${{ secrets.WEBHOOK_FRONTEND_PROD }}
+          echo "✅ Signal sent to Dockploy (PROD)"

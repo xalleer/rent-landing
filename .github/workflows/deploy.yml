@@ -26,13 +26,11 @@ jobs:
       - name: Trigger Dev Webhooks
         if: ${{ inputs.environment == 'development' }}
         run: |
-          curl -X POST ${{ secrets.WEBHOOK_BACKEND_DEV }}
           curl -X POST ${{ secrets.WEBHOOK_FRONTEND_DEV }}
           echo "✅ Signal sent to Dockploy (DEV)"
 
       - name: Trigger Prod Webhooks
         if: ${{ inputs.environment == 'production' }}
         run: |
-          curl -X POST ${{ secrets.WEBHOOK_BACKEND_PROD }}
           curl -X POST ${{ secrets.WEBHOOK_FRONTEND_PROD }}
           echo "✅ Signal sent to Dockploy (PROD)"

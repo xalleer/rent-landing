@@ -25,14 +25,14 @@
           <a href="#" class="store-button transform hover:scale-105 transition">
             <ion-icon name="logo-apple" class="text-3xl"></ion-icon>
             <div class="text-left">
-              <div class="text-[10px] uppercase opacity-70">Download on the</div>
+              <div class="text-[10px] uppercase opacity-70">Coming soon</div>
               <div class="text-lg font-bold leading-none">App Store</div>
             </div>
           </a>
           <a href="#" class="store-button transform hover:scale-105 transition">
             <ion-icon name="logo-google-playstore" class="text-3xl"></ion-icon>
             <div class="text-left">
-              <div class="text-[10px] uppercase opacity-70">GET IT ON</div>
+              <div class="text-[10px] uppercase opacity-70">Coming soon</div>
               <div class="text-lg font-bold leading-none">Google Play</div>
             </div>
           </a>

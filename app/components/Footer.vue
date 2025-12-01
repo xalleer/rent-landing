@@ -12,9 +12,9 @@
             Ми робимо ринок прозорим та безпечним.
           </p>
           <div class="flex gap-4">
-            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><ion-icon name="logo-telegram"></ion-icon></a>
+<!--            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><ion-icon name="logo-instagram"></ion-icon></a>-->
+            <a href="https://www.facebook.com/share/19gTqVbhqB/?mibextid=wwXIfr" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><ion-icon name="logo-facebook"></ion-icon></a>
+<!--            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><ion-icon name="logo-telegram"></ion-icon></a>-->
           </div>
         </div>
 
